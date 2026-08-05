@@ -1,0 +1,205 @@
+<div id="vcc-activity" style="max-width:900px;margin:0 auto;font-family:Segoe UI, Arial, sans-serif;color:#1a1a1a;">
+
+  <style>
+    #vcc-activity * { box-sizing: border-box; }
+    #vcc-activity h2 { font-size:1.4em; margin-bottom:4px; }
+    #vcc-activity p.vcc-instructions { color:#444; margin-top:0; margin-bottom:18px; }
+
+    .vcc-row {
+      display:grid;
+      grid-template-columns: 1fr 110px 110px 190px;
+      align-items:center;
+      border-bottom:1px solid #ddd;
+      padding:10px 6px;
+      background:#f7f9fb;
+    }
+    .vcc-row:nth-child(even) { background:#ffffff; }
+    .vcc-row.vcc-header {
+      background:#dbeafe; font-weight:600; border-bottom:2px solid #99b8d9;
+    }
+    .vcc-label { padding-right:10px; }
+    .vcc-option { display:flex; align-items:center; justify-content:center; gap:6px; }
+    .vcc-option input { width:18px; height:18px; cursor:pointer; }
+    .vcc-option label { cursor:pointer; font-size:0.85em; color:#333; }
+
+    /* Highlight a row green once any radio in it is checked (CSS-only, no JS needed) */
+    .vcc-row:has(input:checked) {
+      background:#eaf7ea;
+      border-left:4px solid #2e7d32;
+    }
+    .vcc-row:has(input:checked) .vcc-label {
+      font-weight:600;
+    }
+
+    #vcc-legend {
+      margin-top:16px; padding:12px 14px; border-radius:8px; background:#f1f5f9;
+      border:1px solid #cbd5e1; font-size:0.9em; color:#333;
+    }
+
+    @media (max-width: 640px) {
+      .vcc-row { grid-template-columns: 1fr; row-gap:6px; }
+      .vcc-option { justify-content:flex-start; }
+      .vcc-row.vcc-header { display:none; }
+      .vcc-label { font-weight:600; margin-bottom:4px; }
+    }
+  </style>
+
+  <h2>Vehicle Controls Checklist</h2>
+  <p class="vcc-instructions">
+    Sit in the driver's seat and locate each control listed below. For every item, mark whether you
+    <strong>found it</strong>, <strong>need help</strong> finding it, or it's <strong>not available</strong> in this vehicle.
+    Rows turn green once you've made a selection, so you can see your progress at a glance.
+  </p>
+
+  <div class="vcc-row vcc-header">
+    <div>Control / Feature</div>
+    <div style="text-align:center;">Found it</div>
+    <div style="text-align:center;">Need help</div>
+    <div style="text-align:center;">Not available</div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Headlight control</div>
+    <div class="vcc-option"><input type="radio" name="item-1" id="item-1-found"><label for="item-1-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-1" id="item-1-help"><label for="item-1-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-1" id="item-1-na"><label for="item-1-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">High-beam control</div>
+    <div class="vcc-option"><input type="radio" name="item-2" id="item-2-found"><label for="item-2-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-2" id="item-2-help"><label for="item-2-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-2" id="item-2-na"><label for="item-2-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Turn signal lever</div>
+    <div class="vcc-option"><input type="radio" name="item-3" id="item-3-found"><label for="item-3-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-3" id="item-3-help"><label for="item-3-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-3" id="item-3-na"><label for="item-3-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Hazard flasher button</div>
+    <div class="vcc-option"><input type="radio" name="item-4" id="item-4-found"><label for="item-4-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-4" id="item-4-help"><label for="item-4-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-4" id="item-4-na"><label for="item-4-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Windshield wiper control</div>
+    <div class="vcc-option"><input type="radio" name="item-5" id="item-5-found"><label for="item-5-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-5" id="item-5-help"><label for="item-5-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-5" id="item-5-na"><label for="item-5-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Washer fluid control</div>
+    <div class="vcc-option"><input type="radio" name="item-6" id="item-6-found"><label for="item-6-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-6" id="item-6-help"><label for="item-6-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-6" id="item-6-na"><label for="item-6-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Front defroster</div>
+    <div class="vcc-option"><input type="radio" name="item-7" id="item-7-found"><label for="item-7-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-7" id="item-7-help"><label for="item-7-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-7" id="item-7-na"><label for="item-7-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Rear defogger / rear-window defroster</div>
+    <div class="vcc-option"><input type="radio" name="item-8" id="item-8-found"><label for="item-8-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-8" id="item-8-help"><label for="item-8-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-8" id="item-8-na"><label for="item-8-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Horn</div>
+    <div class="vcc-option"><input type="radio" name="item-9" id="item-9-found"><label for="item-9-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-9" id="item-9-help"><label for="item-9-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-9" id="item-9-na"><label for="item-9-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Gear selector</div>
+    <div class="vcc-option"><input type="radio" name="item-10" id="item-10-found"><label for="item-10-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-10" id="item-10-help"><label for="item-10-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-10" id="item-10-na"><label for="item-10-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Parking brake</div>
+    <div class="vcc-option"><input type="radio" name="item-11" id="item-11-found"><label for="item-11-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-11" id="item-11-help"><label for="item-11-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-11" id="item-11-na"><label for="item-11-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Mirror adjustment controls</div>
+    <div class="vcc-option"><input type="radio" name="item-12" id="item-12-found"><label for="item-12-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-12" id="item-12-help"><label for="item-12-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-12" id="item-12-na"><label for="item-12-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Dashboard brightness control</div>
+    <div class="vcc-option"><input type="radio" name="item-13" id="item-13-found"><label for="item-13-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-13" id="item-13-help"><label for="item-13-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-13" id="item-13-na"><label for="item-13-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Fuel door release</div>
+    <div class="vcc-option"><input type="radio" name="item-14" id="item-14-found"><label for="item-14-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-14" id="item-14-help"><label for="item-14-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-14" id="item-14-na"><label for="item-14-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Hood release</div>
+    <div class="vcc-option"><input type="radio" name="item-15" id="item-15-found"><label for="item-15-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-15" id="item-15-help"><label for="item-15-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-15" id="item-15-na"><label for="item-15-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Owner's manual or digital manual access</div>
+    <div class="vcc-option"><input type="radio" name="item-16" id="item-16-found"><label for="item-16-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-16" id="item-16-help"><label for="item-16-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-16" id="item-16-na"><label for="item-16-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Seat adjustment controls</div>
+    <div class="vcc-option"><input type="radio" name="item-17" id="item-17-found"><label for="item-17-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-17" id="item-17-help"><label for="item-17-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-17" id="item-17-na"><label for="item-17-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Seat belt height/fit adjustment, if available</div>
+    <div class="vcc-option"><input type="radio" name="item-18" id="item-18-found"><label for="item-18-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-18" id="item-18-help"><label for="item-18-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-18" id="item-18-na"><label for="item-18-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Climate controls</div>
+    <div class="vcc-option"><input type="radio" name="item-19" id="item-19-found"><label for="item-19-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-19" id="item-19-help"><label for="item-19-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-19" id="item-19-na"><label for="item-19-na">Not available</label></div>
+  </div>
+
+  <div class="vcc-row">
+    <div class="vcc-label">Cruise control / speed control, if available</div>
+    <div class="vcc-option"><input type="radio" name="item-20" id="item-20-found"><label for="item-20-found">Found it</label></div>
+    <div class="vcc-option"><input type="radio" name="item-20" id="item-20-help"><label for="item-20-help">Need help</label></div>
+    <div class="vcc-option"><input type="radio" name="item-20" id="item-20-na"><label for="item-20-na">Not available</label></div>
+  </div>
+
+  <div id="vcc-legend">
+    Tip: as you click an answer for each row, that row will turn green so you can track your progress down the list.
+  </div>
+
+</div>
